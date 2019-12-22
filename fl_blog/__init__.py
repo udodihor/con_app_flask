@@ -26,9 +26,11 @@ def create_app(config_class=Config):
     from fl_blog.users.routes import users
     from fl_blog.posts.routes import posts
     from fl_blog.main.routes import main
+    from fl_blog.errors.handlers import errors
 
     app.register_blueprint(users)
     app.register_blueprint(posts)
     app.register_blueprint(main)
+    app.register_blueprint(errors)
 
     return app
